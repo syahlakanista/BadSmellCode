@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divergent Change</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut-icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/smell.css">
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#" class="logo">Code Reengineering</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Back to Home</a>
+            <a href="https://github.com">Github</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Change Preventer</h1>
+        <h2>Divergent Change</h2>
+        <img src="images/h-2.png">
+        <h3> –– Penjelasan Smell</h3>
+        <p> 
+            Smell <i>Divergent Change</i> membuat kamu kesulitan karena harus mengubah banyak method yang tidak berhubungan dalam suatu class ketika melakukan perubahan. 
+            Misalnya, saat menambahkan tipe produk baru, Anda harus mengubah method untuk menemukan, menampilkan, dan memesan produk. 
+            Perubahan yang berbeda-beda ini <i>(Divergent Change)</i> mirip dengan Smell <i>"Shotgun Surgery"</i>, tetapi kebalikannya. 
+            <i>Divergent Change</i> terjadi ketika banyak perubahan dilakukan pada satu class, sedangkan <i>Shotgun Surgery</i> terjadi ketika perubahan tunggal harus dilakukan pada banyak class secara bersamaan.
+        </p>
+        <br>
+        <h3> –– Penyelesaian</h3>
+        <img src="images/c-3.png">
+        <br>
+        <p> Jika kita ingin menambahkan tipe produk "Elektronik", kita perlu mengubah <i>method findProduct()</i> untuk dapat mencari produk elektronik, 
+            method <i>displayProduct()</i> untuk dapat menampilkan informasi produk elektronik, 
+            dan method <i>orderProduct()</i> untuk dapat memproses pemesanan produk elektronik.
+            Perubahan-perubahan ini menyebabkan kode menjadi sulit dipahami dan dipelihara. 
+            Setiap kali kita ingin menambahkan tipe produk baru, kita harus mengubah banyak method di kelas <i>Product.</i>
+            Hal ini dapat menyebabkan bug dan membuat kode menjadi rapuh.
+        </p>
+        <br>
+        <p> Sehingga perlu dilakukan <i>refactor kode</i> untuk menghilangkan smell code <i>Divergent Change</i> dengan menggunakan teknik <b>Extract Class.</b> 
+            Teknik ini melibatkan pemisahan method-method yang terkait dengan tipe produk tertentu ke dalam kelas baru.
+            Ketika kita ingin menambahkan tipe produk baru, kita hanya perlu membuat kelas baru yang mewarisi dari kelas <i>Product</i> dan mengimplementasikan method-method yang diperlukan. 
+            Hal ini tidak akan menyebabkan perubahan pada kode di kelas <i>Product.</i></p>
+        <br>
+        <p> Kode setelah direfactor:</p>
+        <img src="images/c-4.png">
+        <br>
+    </div>
+
+    <section class="footer">
+        <div class="footer_contact">
+            <h4>
+                Contact Me
+            </h4>
+            <div class="contact_link_box">
+                <a href="https://binus.ac.id">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Binus University
+                    </span>
+                </a>
+                <a href="http://wa.me/082111147742">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Call +62 82111147742
+                    </span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=syahlakanista@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        syahlakanista@gmail.com
+                    </span>
+                </a>
+            </div>
+            <h1 class="credit"> &copy created by <span> Syahla Aurellia </span> | all rights reserved! </h1>
+    </section>
+
+    <a href="index.html" class="fas fa-angle-left" id="scroll-top"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

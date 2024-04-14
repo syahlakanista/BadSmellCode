@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speculative Generality</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut-icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/smell.css">
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#" class="logo">Code Reengineering</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Back to Home</a>
+            <a href="https://github.com">Github</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>The Dispensable</h1>
+        <h2>Speculative Generality</h2>
+        <img src="images/h-9.png">
+        <h3> –– Penjelasan Smell</h3>
+        <p> 
+            Smell <i>Speculative Generality</i> bermakna <i>Class, method, field,</i> atau <i>parameter</i> yang sudah disiapkan walaupun belum dipakai. Bahkan sebenarnya tidak ada dalam requirement.
+            Biasanya karena programmer berspekulasi bahwa ini akan dibutuhkan. Namun ternyata setelah produk berjalan lama, spekulasinya ini tidak terbukti.
+            Hal ini tentunya menjadi masalah karena kita membuat code lebih sulit dibaca untuk hal yang tidak perlu.
+        </p>
+        <br>
+        <h3> –– Penyelesaian</h3>
+        <img src="images/c-17.png">
+        <br>
+        <p> Requirement dari client adalah Price bisa memiliki Currency antara IDR atau USD.
+            Programmer berspekulasi bahwa IDR dan USD adalah kurs jenis tradisional, nantinya akan ada kurs jenis digital seperti bitcoin. 
+            Oleh karena itu, Programmer membuat hirarki seperti di dalam package before.
+        </p>
+        <br>
+        <p> Sehingga perlu dilakukan <i>refactor kode</i> dengan menggunakan method <a href="https://sourcemaking.com/refactoring/collapse-hierarchy">Collapse Hierarchy.</a> Kelas Traditional dan Digital dihapus. 
+            kelas USD dan IDR menjadi turunan langsung dari kelas Currency.</p>
+        <br>
+        <p> Kode setelah direfactor:</p>
+        <img src="images/c-18.png">
+        <br>
+    </div>
+
+    <section class="footer">
+        <div class="footer_contact">
+            <h4>
+                Contact Me
+            </h4>
+            <div class="contact_link_box">
+                <a href="https://binus.ac.id">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Binus University
+                    </span>
+                </a>
+                <a href="http://wa.me/082111147742">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Call +62 82111147742
+                    </span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=syahlakanista@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        syahlakanista@gmail.com
+                    </span>
+                </a>
+            </div>
+            <h1 class="credit"> &copy created by <span> Syahla Aurellia </span> | all rights reserved! </h1>
+    </section>
+
+    <a href="index.html" class="fas fa-angle-left" id="scroll-top"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Code</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut-icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/smell.css">
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#" class="logo">Code Reengineering</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Back to Home</a>
+            <a href="https://github.com">Github</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>The Dispensable</h1>
+        <h2>Duplicate Code</h2>
+        <img src="images/h-5.png">
+        <h3> –– Penjelasan Smell</h3>
+        <p> 
+            Smell <i>Duplicate Code</i> terjadi ketika terdapat bagian code yang sama atau mirip. Duplikasi biasanya terjadi ketika beberapa programmer mengerjakan bagian berbeda dari program yang sama pada waktu yang bersamaan. 
+            Karena mereka mengerjakan tugas yang berbeda, mereka mungkin tidak menyadari bahwa rekan mereka telah menulis kode serupa yang dapat digunakan untuk kebutuhan mereka sendiri.
+            Terkadang duplikasi memiliki tujuan untuk memenuhi tenggat waktu dan kode yang ada “hampir tepat” untuk pekerjaan itu, pemrogram pemula mungkin tidak dapat menahan godaan untuk menyalin dan menempelkan kode yang relevan tanpa memperbaikinya.
+            Satu hal yang bisa menjadi rule of thumb adalah <a href="https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)">Rule of Three</a>. Bila bagian code sudah di copy-paste tiga kali, ini sudah menjadi lampu merah untuk segera dilakukan refactor.
+        </p>
+        <br>
+        <h3> –– Penyelesaian</h3>
+        <img src="images/c-9.png">
+        <br>
+        <p> Pada contoh kasus di <i>Foo.java </i>terdapat banyak bagian code yang duplikat di method <i>bar, baz,</i> dan <i>qux.</i>
+        </p>
+        <br>
+        <p> Sehingga dilakukan refactor dengan <b>extract method</b> di banyak tempat. Selain itu, <i>for</i> yang serupa tetapi tidak sama juga diakali dengan cara di-extract 
+            namun ditambahi variabel sehingga bisa digunakan di ketiga fungsi tersebut.</p>
+        <br>
+        <p> Kode setelah direfactor:</p>
+        <img src="images/c-10.png">
+        <br>
+    </div>
+
+    <section class="footer">
+        <div class="footer_contact">
+            <h4>
+                Contact Me
+            </h4>
+            <div class="contact_link_box">
+                <a href="https://binus.ac.id">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Binus University
+                    </span>
+                </a>
+                <a href="http://wa.me/082111147742">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Call +62 82111147742
+                    </span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=syahlakanista@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        syahlakanista@gmail.com
+                    </span>
+                </a>
+            </div>
+            <h1 class="credit"> &copy created by <span> Syahla Aurellia </span> | all rights reserved! </h1>
+    </section>
+
+    <a href="index.html" class="fas fa-angle-left" id="scroll-top"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

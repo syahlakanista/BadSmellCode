@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut-icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/smell.css">
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#" class="logo">Code Reengineering</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Back to Home</a>
+            <a href="https://github.com">Github</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>The Dispensable</h1>
+        <h2>Comments</h2>
+        <img src="images/h-1.png">
+        <h3> –– Penjelasan Smell</h3>
+        <p> Komentar pada kode biasanya dibuat dengan tujuan baik, yaitu ketika <i>programmer</i> menyadari kodenya
+            tidak intuitif atau jelas.
+            Namun, Jika kamu merasa suatu bagian kode tidak dapat dipahami tanpa komentar, coba ubah struktur kodenya
+            agar lebih mudah dimengerti sehingga komentar tidak diperlukan.
+
+            Nama method atau atribut haruslah sudah <i>self-explain </i> tanpa harus diberi komentar.
+            Begitu juga <i>logic flow </i>ldi dalam fungsi.
+            Bila <i>logic flow</i> perlu dijelaskan, dapat dipertimbangkan code tersebut sebagai bagian
+            dari smell Long Method dan perlu di-extract.
+        </p>
+        <br>
+        <h3> –– Penyelesaian</h3>
+        <img src="images/c-1.png">
+        <br>
+        <p> Pada contoh MenuPrinter.java, terdapat banyak komentar yang sebenarnya tidak diperlukan karena karena sudah
+            terlihat jelas dari kode.
+            Masalah yang lebih serius terletak pada inkonsistensi antara komentar yang menyatakan bahwa fungsi ini
+            melakukan "print kemudian scan" dan nama fungsi yang hanya menyiratkan tindakan mencetak menu (printMenu).
+            Ini menciptakan inkonsistensi antara apa yang diharapkan oleh komentar dan apa yang diberikan oleh fungsi
+            itu sendiri, yang dapat membingungkan atau menyesatkan programmer lain.</p>
+        <br>
+        <p> Sehingga perlu dilakukan <b>extract method</b> pada bagian-bagian di dalam fungsi, dan dilakukan <b>rename
+                method</b> pada fungsi printMenu menjadi <i>printMenuAndGetInput</i>.</p>
+        <br>
+        <p> Kode setelah direfactor:</p>
+        <img src="images/c-2.png">
+        <br>
+    </div>
+
+    <section class="footer">
+        <div class="footer_contact">
+            <h4>
+                Contact Me
+            </h4>
+            <div class="contact_link_box">
+                <a href="https://binus.ac.id">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Binus University
+                    </span>
+                </a>
+                <a href="http://wa.me/082111147742">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Call +62 82111147742
+                    </span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=syahlakanista@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        syahlakanista@gmail.com
+                    </span>
+                </a>
+            </div>
+            <h1 class="credit"> &copy created by <span> Syahla Aurellia </span> | all rights reserved! </h1>
+    </section>
+
+    <a href="index.html" class="fas fa-angle-left" id="scroll-top"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

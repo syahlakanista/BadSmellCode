@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotgun Surgery</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut-icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/smell.css">
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#" class="logo">Code Reengineering</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Back to Home</a>
+            <a href="https://github.com">Github</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Change Preventer</h1>
+        <h2>Shotgun Surgery</h2>
+        <img src="images/h-3.png">
+        <h3> –– Penjelasan Smell</h3>
+        <p> 
+            <i>Shotgun Surgery</i> adalah sebuah smell code yang terjadi ketika kita ingin mengubah atau menambahkan fitur ke dalam code, 
+            namun kita harus mengganti bagian code yang tersebar di banyak class lain.
+            Bayangkan seseorang ditembak dengan senjata api jenis shotgun, luka tembak akan menyebar di banyak tempat. 
+            Sama dengan <i>Shotgun Surgery</i>, di mana perubahan code yang kecil dapat berakibat pada perubahan di banyak class yang berbeda.
+            Smell ini menyerupai <i>Divergent Change</i> tetapi sebenarnya memiliki ciri-ciri yang berlawanan. 
+            <i>Divergent Change</i> adalah ketika banyak perubahan dilakukan pada satu kelas. 
+            Sedangkan <i>Shotgun Surgery</i> mengacu pada saat satu perubahan dilakukan pada beberapa kelas secara bersamaan.
+        </p>
+        <br>
+        <h3> –– Penyelesaian</h3>
+        <img src="images/c-5.png">
+        <br>
+        <p> 
+            Kelas SavingsAccount ini sekilas terlihat baik-baik saja, namun masalahnya terletak pada pengulangan kode yang sangat mirip.  
+            Hal ini terlihat pada pengecekan saldo minimum, yaitu <b>this.balance < MIN_BALANCE</b>.  
+            Pengecekan ini dilakukan di tiga tempat yang berbeda.  
+            Jika nantinya definisi saldo minimum ini perlu diubah, maka kita harus melakukan perubahan di ketiga tempat tersebut.  
+            Perlu dicatat bahwa meskipun kode keseluruhannya tidak identik di setiap tempat, logika inti dari pengecekan tersebut adalah sama.
+        </p>
+        <br>
+        <p> Untuk memperbaiki kode <i>SavingsAccount</i> yang memiliki logika pengecekan saldo minimum yang berulang, 
+            kita dapat menggunakan metode <b>Extract Method.  </b>
+            Metode ini memungkinkan kita untuk mengekstrak logika pengecekan saldo minimum yang berulang ke dalam method baru yang terpisah.
+        </p>
+        <br>
+        <p> Kode setelah direfactor:</p>
+        <img src="images/c-6.png">
+        <br>
+    </div>
+
+    <section class="footer">
+        <div class="footer_contact">
+            <h4>
+                Contact Me
+            </h4>
+            <div class="contact_link_box">
+                <a href="https://binus.ac.id">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Binus University
+                    </span>
+                </a>
+                <a href="http://wa.me/082111147742">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Call +62 82111147742
+                    </span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=syahlakanista@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        syahlakanista@gmail.com
+                    </span>
+                </a>
+            </div>
+            <h1 class="credit"> &copy created by <span> Syahla Aurellia </span> | all rights reserved! </h1>
+    </section>
+
+    <a href="index.html" class="fas fa-angle-left" id="scroll-top"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

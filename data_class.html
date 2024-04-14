@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Class</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut-icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/smell.css">
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#" class="logo">Code Reengineering</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Back to Home</a>
+            <a href="https://github.com">Github</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>The Dispensable</h1>
+        <h2>Data Class</h2>
+        <img src="images/h-7.png">
+        <h3> –– Penjelasan Smell</h3>
+        <p> 
+            Smell <i>Data Class</i> mengacu pada kelas yang hanya field dan fungsi untuk mengaksesnya <b>(getter and setter)</b>. 
+            Kelas-kelas ini tidak berisi fungsionalitas tambahan apa pun dan tidak dapat beroperasi secara independen pada data yang dimilikinya,
+            sehingga bisa dipertimbangkan untuk dibuang dengan cara digabung dengan kelas lain.
+            Ketika produk baru awal-awal di-code, sangat wajar bila banyak kelas yang belum memiliki behavior (baru isi data saja). 
+            Namun, bila produk sudah makin berkembang, namun masih ada suatu kelas yang hanya berisi setter/getter, 
+            sudah sinyal kuat untuk dilakukan refactor.
+        </p>
+        <br>
+        <h3> –– Penyelesaian</h3>
+        <img src="images/c-13.png">
+        <br>
+        <p> Pada contoh kasus <i>FullName.java</i>, kelas hanya berisi setter getter untuk field <i>firstName </i>dan <i>lastName.</i>
+            Sehingga perlu dilakukan <i>refactor kode</i> dengan memindahkan Semua field dari FullName ke <i>User.java.</i> 
+            Kemudian kelas <i>FullName </i>dihapus.</p>
+        <br>
+        <p> Kode setelah direfactor:</p>
+        <img src="images/c-14.png">
+        <br>
+    </div>
+
+    <section class="footer">
+        <div class="footer_contact">
+            <h4>
+                Contact Me
+            </h4>
+            <div class="contact_link_box">
+                <a href="https://binus.ac.id">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Binus University
+                    </span>
+                </a>
+                <a href="http://wa.me/082111147742">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Call +62 82111147742
+                    </span>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=syahlakanista@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        syahlakanista@gmail.com
+                    </span>
+                </a>
+            </div>
+            <h1 class="credit"> &copy created by <span> Syahla Aurellia </span> | all rights reserved! </h1>
+    </section>
+
+    <a href="index.html" class="fas fa-angle-left" id="scroll-top"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
